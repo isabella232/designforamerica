@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110312004409) do
+ActiveRecord::Schema.define(:version => 20110312015933) do
 
   create_table "profiles", :force => true do |t|
     t.string   "first_name"
@@ -26,6 +26,39 @@ ActiveRecord::Schema.define(:version => 20110312004409) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+  end
+
+  create_table "projects", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "organization"
+    t.string   "cause"
+    t.string   "location"
+    t.text     "description"
+    t.boolean  "tos"
+    t.string   "size_require"
+    t.string   "format_require"
+    t.text     "target_audience"
+    t.text     "three_things"
+    t.text     "colors_want"
+    t.text     "colors_donotwant"
+    t.text     "how_use"
+    t.text     "content_on_design"
+    t.boolean  "published",              :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "creative1_file_name"
+    t.string   "creative1_content_type"
+    t.integer  "creative1_file_size"
+    t.datetime "creative1_updated_at"
+    t.string   "creative2_file_name"
+    t.string   "creative2_content_type"
+    t.integer  "creative2_file_size"
+    t.datetime "creative2_updated_at"
+    t.string   "creative3_file_name"
+    t.string   "creative3_content_type"
+    t.integer  "creative3_file_size"
+    t.datetime "creative3_updated_at"
   end
 
   create_table "users", :force => true do |t|
