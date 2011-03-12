@@ -1,0 +1,12 @@
+development:
+    access_key_id: AKIAJQOABG5XB23DM4AQ
+    secret_access_key: 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
+    bucket: secret_sauce_development
+test:
+    access_key_id: AKIAJQOABG5XB23DM4AQ
+    secret_access_key: 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
+    bucket: secret_sauce_test    
+production:
+    access_key_id: AKIAJQOABG5XB23DM4AQ
+    secret_access_key: 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
+    bucket: secret_sauce_production    
