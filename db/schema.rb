@@ -10,7 +10,73 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110312001559) do
+ActiveRecord::Schema.define(:version => 20110312025526) do
+
+  create_table "designs", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.text     "description"
+    t.boolean  "tos"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "thumbnail_file_name"
+    t.string   "thumbnail_content_type"
+    t.integer  "thumbnail_file_size"
+    t.datetime "thumbnail_updated_at"
+    t.string   "zip_package_file_name"
+    t.string   "zip_package_content_type"
+    t.integer  "zip_package_file_size"
+    t.datetime "zip_package_updated_at"
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "screen_name"
+    t.string   "website"
+    t.text     "bio"
+    t.boolean  "agree"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
+
+  create_table "projects", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "organization"
+    t.string   "cause"
+    t.string   "location"
+    t.text     "description"
+    t.boolean  "tos"
+    t.string   "size_require"
+    t.string   "format_require"
+    t.text     "target_audience"
+    t.text     "three_things"
+    t.text     "colors_want"
+    t.text     "colors_donotwant"
+    t.text     "how_use"
+    t.text     "content_on_design"
+    t.boolean  "published",              :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "creative1_file_name"
+    t.string   "creative1_content_type"
+    t.integer  "creative1_file_size"
+    t.datetime "creative1_updated_at"
+    t.string   "creative2_file_name"
+    t.string   "creative2_content_type"
+    t.integer  "creative2_file_size"
+    t.datetime "creative2_updated_at"
+    t.string   "creative3_file_name"
+    t.string   "creative3_content_type"
+    t.integer  "creative3_file_size"
+    t.datetime "creative3_updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

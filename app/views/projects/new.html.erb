@@ -1,0 +1,72 @@
+<% content_for :column2 do%>
+    <h1 class="h1_first">New project</h1>
+    <%= form_for @project, :html => { :multipart => true }  do |f| %>
+      <% if @project.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+          <ul>
+          <% @project.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <p><%= f.label :name, "Project Title" %>: <%= f.text_field :name %></p>
+      </div>
+      <div class="field">
+        <p><%= f.label :organization, "Organization" %>: <%= f.text_field :organization %></p>
+      </div>
+      <div class="field">
+        <p><%= f.label :cause, "Cause" %>: <%= f.text_field :cause %></p>
+      </div>
+      <div class="field">
+        <p><%= f.label :location, "Location" %>: <%= f.text_field :location %></p>
+      </div>
+      <div class="field">
+        <p><%= f.label :description, "Project Description" %>: <%= f.text_area :description %></p>
+      </div>
+
+      <div class="field">
+        <p><%= f.label :size_require, "What are your size requirements?" %>: <%= f.text_field :size_require %></p>
+      </div>
+      <div class="field">
+        <p><%= f.label :format_require, "What type of files formats do you require?" %>: <%= f.text_field :format_require %></p>
+      </div>
+      <div class="field">
+        <p><%= f.label :target_audience, "What is your target audience?" %>: <%= f.text_area :target_audience %></p>
+      </div>
+      <div class="field">
+        <p><%= f.label :three_things, "What are the three things you would like to communicate with your design?" %>: <%= f.text_area :three_things %></p>
+      </div>
+      <div class="field">
+        <p><%= f.label :colors_want, "What colors would you like included in your design?" %>: <%= f.text_area :colors_want %></p>
+      </div>
+      <div class="field">
+        <p><%= f.label :colors_donotwant, "What colors would you like to avoid in your design?" %>: <%= f.text_area :colors_donotwant %></p>
+      </div>
+      <div class="field">
+        <p><%= f.label :how_use,"How will you use the print design? (i.e. where will this design appear? on a bus or a T-Shirt, etc.?)" %>: <%= f.text_area :how_use %></p>
+      </div>
+      <div class="field">
+        <p><%= f.label :content_on_design, "What content must be included in the design?" %>: <%= f.text_area :content_on_design %></p>
+      </div>
+      <div class="field">
+        <p>You can add up to three creative files:</p>
+        <p><%= f.file_field :creative1 %></p>
+        <p><%= f.file_field :creative2 %></p>   
+        <p><%= f.file_field :creative3 %></p>
+      </div>
+      <div class="field">
+        <p><%= f.label :tos, "I agree to the Terms of Service" %>: <%= f.check_box :tos %></p>
+      </div>  
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+
+<% end %>
+
+

@@ -29,6 +29,14 @@
 
     <div id="strip"> 
     	<a href="/" title="Home" rel="nofollow">Home</a> | 
+    	<a href="/projects" title="Users" rel="nofollow">Projects</a> |     	
+    	<a href="/profiles" title="Users" rel="nofollow">Profiles</a> |     	
+    	<% if current_user%>
+      <a href="/projects?user_id=<%=current_user.id%>">My Projects </a> | 
+    	<a href="/profiles/<%=current_user.profile.id%>" title="My Profile" rel="nofollow">My Profile</a> | 
+    	<%= link_to "Edit My Profile", edit_profile_path(current_user.profile) %> |     	
+    	<%= link_to "New Project", new_project_path%>
+    	<% end %>
     </div> 
     <div id="col1">
       <%= yield :column1%>

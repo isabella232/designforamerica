@@ -1,0 +1,27 @@
+<% content_for :column2 do %>
+    <h1 class="h1_first">designs</h1>
+      <table>
+        <tr>
+                    <th>User</th>
+                    <th>Description</th>
+                    <th>Thumbnail</th>
+                    <th>Zip</th>                    
+                    <th></th>
+        </tr>
+<% @designs.each do |design| %>
+        <tr>
+          
+                    <td><%= link_to design.user.profile.screen_name, design.user.profile %></td>
+                    <td><%= design.description %></td>
+                    <td><%= image_tag design.thumbnail.url %></td>
+                    <td><%=link_to design.zip_package.original_filename, design.zip_package.url %></td>
+                      
+                    <% if design.user == current_user%><td><%= link_to 'Edit', edit_design_path(design) %> | <%= link_to 'Destroy', design, :confirm => 'Are you sure?', :method => :delete %></td><% end %>
+        </tr>
+      <% end %>
+      </table>
+<% end %>
+
+
+
+

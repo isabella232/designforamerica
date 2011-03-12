@@ -1,19 +1,17 @@
 Secretsauce::Application.routes.draw do
 
-  #ratings
-  post "rate", :to => 'interviews#rate'
+  resources :designs
+  
+  resources :projects do 
+      resources :designs
+  end
 
-  resources :axes
-  resources :roles
-  resources :projects
-  resources :interviews
+  resources :profiles
   
   devise_for :users
 
   #search
   get "search/index"
   match 'search', :to => 'search#index'  
-  get "home/index"
-
   root :to => "home#index"
 end

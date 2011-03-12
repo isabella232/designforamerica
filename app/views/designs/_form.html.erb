@@ -1,0 +1,40 @@
+<%= form_for @design, :html => { :multipart => true } do |f| %>
+  <% if @design.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@design.errors.count, "error") %> prohibited this design from being saved:</h2>
+
+      <ul>
+      <% @design.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :project_id, :value => params[:project_id] %></p>
+  </div>
+  <div class="field">
+    <% if @design.thumbnail?%>
+    <p><%= image_tag @design.thumbnail.url%></p>
+    <% end %>
+    <%= f.label :thumbnail, "Upload a Thumbnail" %><br><%= f.file_field :thumbnail %>  
+  </div>    
+  <p></p>
+  <div class="field">
+    <% if @design.zip_package?%>
+      <p><%=link_to @design.zip_package.original_filename, @design.zip_package.url %></p>
+    <% end %>
+      <%= f.label :zip_package, "Upload a Zip Package" %><br><%= f.file_field :zip_package %>  
+  </div>    
+  <p></p>
+  <div class="field">
+    <p><%= f.label :description %>: <%= f.text_area :description %></p>
+  </div>
+  <div class="field">
+    <p><%= f.label :tos %>: <%= f.check_box :tos %></p>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

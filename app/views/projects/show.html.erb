@@ -1,0 +1,102 @@
+<% content_for :column2 do%>
+    <h1 class="h1_first">project</h1>
+
+            <p>
+        <b>Name:</b>
+        <%= @project.name %>
+      </p>
+      <%  if @project.published?%>
+      <a href="/projects/<%=@project.id%>/designs/new">Submit a Design</a>
+      <% end %>
+      
+      <%  if !@project.published?%>
+      <%= form_for @project do |f| %>
+      <%= f.hidden_field :published, :value => true%>
+        <%= f.submit "Publish This Project", :disable_with => 'Publish This Projecting...' %>
+      <% end %>
+      <% end %>
+            <p>
+              
+        <b>Organization:</b>
+        <%= @project.organization %>
+      </p>
+            <p>
+        <b>Cause:</b>
+        <%= @project.cause %>
+      </p>
+            <p>
+        <b>Location:</b>
+        <%= @project.location %>
+      </p>
+            <p>
+        <b>Description:</b>
+        <%= @project.description %>
+      </p>
+            <p>
+        <b>Tos:</b>
+        <%= @project.tos %>
+      </p>
+            <p>
+        <b>Size require:</b>
+        <%= @project.size_require %>
+      </p>
+            <p>
+        <b>Format require:</b>
+        <%= @project.format_require %>
+      </p>
+            <p>
+        <b>Target audience:</b>
+        <%= @project.target_audience %>
+      </p>
+            <p>
+        <b>Three things:</b>
+        <%= @project.three_things %>
+      </p>
+            <p>
+        <b>Colors want:</b>
+        <%= @project.colors_want %>
+      </p>
+            <p>
+        <b>Colors donotwant:</b>
+        <%= @project.colors_donotwant %>
+      </p>
+            <p>
+        <b>How use:</b>
+        <%= @project.how_use %>
+      </p>
+            <p>
+        <b>Content on design:</b>
+        <%= @project.content_on_design %>
+      </p>
+      <p>
+        Creative Files:
+        <ul>
+        <% if @project.creative1?%>
+
+        <li><%=link_to @project.creative1.original_filename, @project.creative1.url %></li>
+        <%end%>
+        <% if @project.creative2?%>
+        <li><%=link_to @project.creative2.original_filename, @project.creative2.url %></li>
+        <%end%>
+        <% if @project.creative3?%>
+          <li><%=link_to @project.creative3.original_filename, @project.creative3.url %></li>
+        <%end%>
+        </ul>
+        <%= render :partial => "designs/design", :collection => @project.designs%>
+      </p>
+      
+<% end %>
+<% content_for :column3 do%>  
+<h3>Actions</h3> 
+	<div class="col3_content contribute"> 
+    <%= link_to 'New Project', new_project_path %><br>
+    <% if current_user == @project.user%>
+    <%= link_to 'Edit', edit_project_path(@project) %><br>
+    <%= link_to 'Destroy', @project, :confirm => 'Are you sure?', :method => :delete %>    
+    <% end %>
+	</div>
+  
+<% end %>
+
+
+

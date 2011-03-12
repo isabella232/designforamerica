@@ -1,0 +1,22 @@
+<% content_for :column2 do %>
+    <h1 class="h1_first">Profiles</h1>
+      <table>
+        <tr>
+                    <th>Screen name</th>
+                    <th>Website</th>
+                    <th>bio</th>
+                    <th></th>
+        </tr>
+<% @profiles.each do |profile| %>
+        <tr>
+                    <td><%=link_to profile.screen_name, profile %></td>
+                    <td><%= profile.website %></td>
+                    <td><%= profile.bio %></td>
+        </tr>
+      <% end %>
+      </table>
+<% end %>
+
+
+
+

@@ -1,0 +1,24 @@
+<% content_for :column2 do %>
+    <h1 class="h1_first">design</h1>
+      <p>
+        <%=link_to @design.project.name, @design.project%>
+      </p>
+      <p>          
+        <b>User:</b>
+        <%= @design.user.profile.screen_name %>
+      </p>
+      <p>
+        <%= image_tag @design.thumbnail.url%>
+        </p>
+            <p>Zip Package: <%=link_to @design.zip_package.original_filename, @design.zip_package.url %></p>
+            <p>
+        <b>Description:</b>
+        <%= @design.description %>
+      </p>
+            <p>
+        <b>Tos:</b>
+        <%= @design.tos %>
+      </p>
+<% end %>
+
+
