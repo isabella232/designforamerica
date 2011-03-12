@@ -5,6 +5,9 @@
         <b>Name:</b>
         <%= @project.name %>
       </p>
+      <%  if @project.published?%>
+      <a href="/projects/<%=@project.id%>/designs/new">Submit a Design</a>
+      <% end %>
       
       <%  if !@project.published?%>
       <%= form_for @project do |f| %>

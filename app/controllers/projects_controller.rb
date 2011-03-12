@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
     if params[:user_id]
       @projects = Project.where(:user_id => params[:user_id])
     else
-      @projects = Project.all
+      @projects = Project.published
     end
 
     respond_to do |format|

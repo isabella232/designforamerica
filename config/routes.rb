@@ -1,6 +1,10 @@
 Secretsauce::Application.routes.draw do
 
-  resources :projects
+  resources :designs
+  
+  resources :projects do 
+      resources :designs
+  end
 
   resources :profiles
   
