@@ -5,6 +5,7 @@ class Design < ActiveRecord::Base
   validates_presence_of :description, :on => :create, :message => "can't be blank"
   validates_presence_of :user, :on => :create, :message => "can't be blank"  
   validates_presence_of :project, :on => :create, :message => "can't be blank"  
+  validates_presence_of :tos, :on => :create, :message => "can't be false"    
   
   has_attached_file :thumbnail, :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml", :path => "/:style/:filename"  
   has_attached_file :zip_package, :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml", :path => "/:style/:filename"  

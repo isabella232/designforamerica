@@ -82,8 +82,9 @@
           <li><%=link_to @project.creative3.original_filename, @project.creative3.url %></li>
         <%end%>
         </ul>
-        
+        <%= render :partial => "designs/design", :collection => @project.designs%>
       </p>
+      
 <% end %>
 <% content_for :column3 do%>  
 <h3>Actions</h3> 
