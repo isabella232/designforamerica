@@ -1,0 +1,34 @@
+<% content_for :column2 do %>
+    <h1 class="h1_first">profile</h1>
+            <p>
+        <b>First name:</b>
+        <%= @profile.first_name %>
+      </p>
+            <p>
+        <b>Last name:</b>
+        <%= @profile.last_name %>
+      </p>
+            <p>
+        <b>Screen name:</b>
+        <%= @profile.screen_name %>
+      </p>
+      <% if @profile.avatar?%>
+      <p><%= image_tag @profile.avatar.url, :id => 'headshot'%></p>
+      <% end %>
+            <p>
+        <b>Website:</b>
+        <%= @profile.website %>
+      </p>
+            <p>
+        <b>Bio:</b>
+        <%= @profile.bio %>
+      </p>
+            <p>
+        <b>Agree:</b>
+        <%= @profile.agree %>
+      </p>
+<% end %>
+
+
+
+

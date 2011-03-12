@@ -29,6 +29,10 @@
 
     <div id="strip"> 
     	<a href="/" title="Home" rel="nofollow">Home</a> | 
+    	<a href="/profiles" title="Users" rel="nofollow">Profiles</a> |     	
+    	<% if current_user%>
+    	<a href="/profiles/<%=current_user.profile.id%>" title="My Profile" rel="nofollow">My Profile</a> | 
+    	<% end %>
     </div> 
     <div id="col1">
       <%= yield :column1%>

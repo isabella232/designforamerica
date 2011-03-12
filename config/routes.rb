@@ -1,5 +1,7 @@
 Secretsauce::Application.routes.draw do
 
+  resources :profiles
+
   #ratings
   post "rate", :to => 'interviews#rate'
 
