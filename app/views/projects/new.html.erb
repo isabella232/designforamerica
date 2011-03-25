@@ -1,4 +1,15 @@
 <% content_for :column2 do%>
+    <script language="javascript" type="text/javascript">
+<!--
+function popitup(url) {
+	newwindow=window.open(url,'name','height=200,width=150');
+	if (window.focus) {newwindow.focus()}
+	return false;
+}
+
+// -->
+    </script>
+
     <h1 class="h1_first">New project</h1>
     <%= form_for @project, :html => { :multipart => true }  do |f| %>
       <% if @project.errors.any? %>
@@ -60,7 +71,7 @@
         <p><%= f.file_field :creative3 %></p>
       </div>
       <div class="field">
-        <p><%= f.label :tos, "I agree to the Terms of Service" %>: <%= f.check_box :tos %></p>
+        I agree to the <%= f.label( :tos) {link_to('Terms of Service','termsofservice',:onclick=>"popitup('termsofservice'); return false;")} %> <%= f.check_box :tos %></p>
       </div>  
       <div class="actions">
         <%= f.submit %>
