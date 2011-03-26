@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN"> 
+<html> 
+	<head> 
+    <title><%= content_for?(:title) ? yield(:title) : "Design for America" %></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+		<meta content="Design for America connects governments and nonprofits to designers who want to give back and simultaneously build their portfolio and gather feedback on their work." name="description" /> 
+		<meta content="design, good, nonprofit, cause, government, creatives, creating" name="keywords" />
+    <%= csrf_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag :all %>
+    <script src="/javascripts/ckeditor/ckeditor.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/javascripts/ckeditor/adapters/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://cdn.jquerytools.org/1.2.5/form/jquery.tools.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <%= yield(:head) %>
+	</head> 
+	<body>
+    <div id="header"> 
+    	<div id="session"> 
+      <%= yield :column1%>
+    </div>
+    <div id="col2">
+      <div id="col2_internal">
+      <%= yield %>
+      <%= yield :column2%>
+      </div>
+    </div>
+    <div id="col3">
+      <%= yield :column3%>
+    </div>	
+  </body>
+</html>
