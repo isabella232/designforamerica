@@ -76,10 +76,10 @@ body
 {
 	font-family:"Lucida Grande",Geneva,Verdana,Arial,sans-serif;
 	font-size: 12px;
-	background: #C9D7D8;
+	background: #FFFFFF;
 	padding: 0;
 	margin: 0;
-	border-top: 5px solid #409DD6; 
+	border-top: 5px solid #888888; 
 }
 
 a
@@ -195,7 +195,7 @@ span.tip {
 {
 	background:url(/images/bg.gif) repeat-x #FFF;
 	position: relative;
-	padding:1.2em;
+	padding:5em;
 }
 
 #logo
@@ -352,13 +352,19 @@ label {
 	line-height:250%;
 }
 
+#headerimg {
+	float: left;
+}
+
 #strip
 {
-	background: #409DD6;
+	background: #000000;
 	padding: .6em 2em .6em 2em;
 	min-height: 1.2em;
+	margin-top: 3em;
 	border-bottom: 3px solid white;
 	color:#10394b;
+	float: right; center;
 }
 
 #strip_right
