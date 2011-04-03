@@ -1,7 +1,25 @@
-<%= content_for :column1 do %>
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function(){
+        $("div.cityslides").carousel(
+                                     { autoSlide: true, loop: true, nextBtn: false, prevBtn: false });
+    });
+</script>
+<% end %>
+<%= content_for :leftbox do %>
+<p class="tagline">Creating an ecosystem of designers creating for the public good.</p> 
 <% end %>
 
-<%= content_for :column2 do %>
+<%= content_for :slider do %>
+  <div class="cityslides">
+    <ul>
+      <li><img src="/images/boston.jpg"></img></li>
+      <li><img src="/images/philly.jpg"></img></li>
+      <li><img src="/images/seattle.jpg"></img></li>
+    </ul>
+</div> 
+    
+      
 <% end %>
 
 <%= content_for :column3 do %>  

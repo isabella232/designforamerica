@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN"> 
+<html> 
+	<head> 
+    <title><%= content_for?(:title) ? yield(:title) : "Design for America" %></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+		<meta content="Design for America connects governments and nonprofits to designers who want to give back and simultaneously build their portfolio and gather feedback on their work." name="description" /> 
+		<meta content="design, good, nonprofit, cause, government, creatives, creating" name="keywords" />
+    <%= csrf_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag :all %>
+    <script src="/javascripts/ckeditor/ckeditor.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/javascripts/ckeditor/adapters/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://cdn.jquerytools.org/1.2.5/form/jquery.tools.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <%= yield(:head) %>
+	</head> 
+	<body>
+    <div id="header"> 
+    	<%= link_to image_tag('codeforamerica.png'), :root%>
+    	<div id="session"> 
+    	  <%= render 'layouts/sign_in'%>
+      </div>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+    </div>
+    
+    <%= render 'layouts/search' unless params[:controller] == 'search' %>
+
+    <div id="strip"> 
+    	<a href="/" title="Home" rel="nofollow">Home</a> | 
+    	<a href="/projects" title="Users" rel="nofollow">Projects</a> |     	
+    	<a href="/profiles" title="Users" rel="nofollow">Profiles</a> |     	
+    	<% if current_user%>
+      <a href="/projects?user_id=<%=current_user.id%>">My Projects </a> | 
+    	<a href="/profiles/<%=current_user.profile.id%>" title="My Profile" rel="nofollow">My Profile</a> | 
+    	<%= link_to "Edit My Profile", edit_profile_path(current_user.profile) %> |     	
+    	<%= link_to "New Project", new_project_path%>
+    	<% end %>
+    </div> 
+    <div id="col1">
+      <%= yield :column1%>
+    </div>
+    <div id="col2">
+      <div id="col2_internal">
+      <%= yield %>
+      <%= yield :column2%>
+      </div>
+    </div>
+    <div id="col3">
+      <%= yield :column3%>
+    </div>	
+  </body>
+</html>
