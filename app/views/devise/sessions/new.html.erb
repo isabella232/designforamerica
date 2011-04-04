@@ -1,0 +1,35 @@
+<% content_for :head do %>
+<script type="text/javascript">
+    $(function(){
+        $("div.cityslides").carousel(
+                                     { autoSlide: true, loop: true, nextBtn: false, prevBtn: false });
+    });
+</script>
+<% end %>
+<% content_for :leftbox do %>
+<h2>Sign in</h2>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <p><%= f.label :email %><br />
+  <%= f.text_field :email %></p>
+
+  <p><%= f.label :password %><br />
+  <%= f.password_field :password %></p>
+
+  <% if devise_mapping.rememberable? -%>
+    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
+  <% end %>
+
+  <p><%= f.submit "Sign in" %></p><br/>
+<% end %>
+
+<%=render :partial => "devise/shared/links" %>
+<% end %>
+<% content_for :slider do %>
+  <div class="cityslides">
+    <ul>
+      <li><img src="/images/boston.jpg"></img></li>
+      <li><img src="/images/philly.jpg"></img></li>
+      <li><img src="/images/seattle.jpg"></img></li>
+    </ul>
+</div> 
+<% end %>

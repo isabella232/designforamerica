@@ -10,6 +10,7 @@ Secretsauce::Application.routes.draw do
   
   resources :profiles
   
+  # this means that the Devise views will be used for rendering user/ paths like users/sign_in
   devise_for :users
 
   #search

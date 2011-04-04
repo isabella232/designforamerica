@@ -1,14 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN"> 
 <html> 
 	<head> 
-    <title><%= content_for?(:title) ? yield(:title) : "Design for America" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "ReDesign.Org" %></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
 		<meta content="Design for America connects governments and nonprofits to designers who want to give back and simultaneously build their portfolio and gather feedback on their work." name="description" /> 
 		<meta content="design, good, nonprofit, cause, government, creatives, creating" name="keywords" />
     <%= csrf_meta_tag %>
-    <%# = stylesheet_link_tag "application" %>
-<link rel="stylesheet" href="stylesheets/application.css" type="text/css" media="screen" />
-<!-- <link rel="stylesheet" href="stylesheets/doc.css" type="text/css" media="screen" /> -->
+    <%= stylesheet_link_tag "application" %>
 
     <!--
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>  MMK added from CfA website
@@ -33,6 +31,7 @@
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
+         <%= render 'layouts/search' unless params[:controller] == 'search' %>
 	</div>
 	<div id="nav"> 
     	<!-- <a href="/" title="Home" rel="nofollow">Homepage</a> | -->
@@ -63,10 +62,10 @@
        <div id="container">
         <div class="call_action">
 		      <%= yield :leftbox %>
+	</div>
             <div class="slider">
-		      <%= yield :slider %>
-		     
-        </div><!--call_action-->
+		      <%= yield :slider %>	     
+        </div><!--slider -->
        </div><!--container-->
        
        <div id="bottom_container">
