@@ -1,8 +1,31 @@
+@font-face {
+    font-family: 'DejaVuSansCondensed';
+    src: url('fonts/DejaVuSansCondensed-webfont.eot');
+    src: url('fonts/DejaVuSansCondensed-webfont.eot?iefix') format('eot'),
+         url('fonts/DejaVuSansCondensed-webfont.woff') format('woff'),
+         url('fonts/DejaVuSansCondensed-webfont.ttf') format('truetype'),
+         url('fonts/DejaVuSansCondensed-webfont.svg#webfontxsYM2XhJ') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DejaVuSansBold';
+    src: url('fonts/DejaVuSans-Bold-webfont.eot');
+    src: url('fonts/DejaVuSans-Bold-webfont.eot?iefix') format('eot'),
+         url('fonts/DejaVuSans-Bold-webfont.woff') format('woff'),
+         url('fonts/DejaVuSans-Bold-webfont.ttf') format('truetype'),
+         url('fonts/DejaVuSans-Bold-webfont.svg#webfontjdVpuBVN') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td 
 { 
 	margin: 0;
 	padding: 0;
-	color:#10394b;
+	color:#000000;
 }
 
 table 
@@ -74,7 +97,8 @@ abbr,acronym
 
 body
 {
-	font-family:"Lucida Grande",Geneva,Verdana,Arial,sans-serif;
+	/*font-family:"Lucida Grande",Geneva,Verdana,Arial,sans-serif;*/
+	font:18px/20px 'DejaVuSansBold';
 	font-size: 12px;
 	background:url(/images/bg.gif) repeat-x scroll 0 0 #FFF;
 	padding: 0;
@@ -152,28 +176,6 @@ a:hover
 	color: #165d91;
 }
 
-@font-face {
-    font-family: 'DejaVuSansCondensed';
-    src: url('fonts/DejaVuSansCondensed-webfont.eot');
-    src: url('fonts/DejaVuSansCondensed-webfont.eot?iefix') format('eot'),
-         url('fonts/DejaVuSansCondensed-webfont.woff') format('woff'),
-         url('fonts/DejaVuSansCondensed-webfont.ttf') format('truetype'),
-         url('fonts/DejaVuSansCondensed-webfont.svg#webfontxsYM2XhJ') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'DejaVuSansBold';
-    src: url('fonts/DejaVuSans-Bold-webfont.eot');
-    src: url('fonts/DejaVuSans-Bold-webfont.eot?iefix') format('eot'),
-         url('fonts/DejaVuSans-Bold-webfont.woff') format('woff'),
-         url('fonts/DejaVuSans-Bold-webfont.ttf') format('truetype'),
-         url('fonts/DejaVuSans-Bold-webfont.svg#webfontjdVpuBVN') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
 
 /* #nav ul  { display:block; width:440px; height:75px; float:right; margin:82px -40px 0 165px; } */
 #nav li,  #nav li a, #nav li a:visited {
@@ -270,9 +272,9 @@ span.tip {
 
 #search_box
 {
-	border: 1px solid #c9d7d8;
+	border: 1px solid #999999;
 	font-size: 1.3em;
-	background: #f3f9f8;
+	background: #ffffff;
 	padding: .3em;
 	width: 15em;
 }
@@ -395,6 +397,7 @@ label {
 
 #headerimg {
 	float: left;
+	padding-top: 15px;
 }
 
 #strip
@@ -2442,7 +2445,7 @@ ul#presence_icons li {
 #container {width:940px; height:300px;}
 .call_action
          { width:250px; height:276px; margin:15px 0 0 20px; float:left; padding:10px; border:1px solid #ccc;}
-.slider  { width:616px; height:296px; margin:-39px 0 0 288px; border:1px solid #ccc; float:left;}
+.slider  { width:616px; height:296px; margin:14px 0 0 15px; border:1px solid #ccc; float:left;}
 .js {overflow:hidden;}
 #container .carousel,
 #container .carousel .carousel-wrap{margin:0;border:0;}

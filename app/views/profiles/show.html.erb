@@ -1,6 +1,4 @@
-<% content_for :column2 do %>
-    <h1 class="h1_first">profile</h1>
-            <p>
+<% content_for :leftbox do %>
         <b>First name:</b>
         <%= @profile.first_name %>
       </p>
@@ -13,7 +11,7 @@
         <%= @profile.screen_name %>
       </p>
       <% if @profile.avatar?%>
-      <p><%= image_tag @profile.avatar.url, :id => 'headshot'%></p>
+      <p><%= image_tag @profile.avatar.url, :id => 'headshot', :size => "60x60"%></p>
       <% end %>
             <p>
         <b>Website:</b>
@@ -27,6 +25,24 @@
         <b>Agree:</b>
         <%= @profile.agree %>
       </p>
+<% end %>
+<% content_for :slider do %>
+    <h1 class="h1_first">Profiles</h1>
+      <table border=1 cellpadding="10">
+        <tr>
+                    <th>Screen name</th>
+                    <th>Website</th>
+                    <th>bio</th>
+                    <th></th>
+        </tr>
+<% @profiles.each do |profile1| %>
+        <tr>
+                    <td><%=link_to profile1.screen_name, profile1 %></td>
+                    <td><%= profile1.website %></td>
+                    <td><%= profile1.bio %></td>
+        </tr>
+      <% end %>
+      </table>
 <% end %>
 
 

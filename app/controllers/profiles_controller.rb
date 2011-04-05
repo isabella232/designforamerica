@@ -15,10 +15,11 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.xml
   def show
     @profile = Profile.find(params[:id])
+    @profiles = Profile.all
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @profile }
+      format.xml  { render :xml => @profiles }
     end
   end
 

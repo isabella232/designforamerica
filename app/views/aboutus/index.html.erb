@@ -1,0 +1,33 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function(){
+        $("div.cityslides").carousel(
+                                     { autoSlide: true, loop: true, nextBtn: false, prevBtn: false });
+    });
+</script>
+<% end %>
+<%= content_for :leftbox do %>
+<p class="tagline">ABOUT US</p>
+&quot;Good design adds value of some kind, gives meaning, and, not incidentally, can be sheer pleasure to behold; it respects the viewer&#39;s sensibilities and rewards the entrepreneur.&quot; &#45; Paul Rand, Design Form and Chaos
+</br>
+What if you could help build an ecosystem of artists designing for public good? What if creative minds could collaborate through a dashboard that fuses the social excitement of dribble.com with the altruism of sparked.com? <!-- People volunteer to plant trees, fight fires and build houses &#45; how about donating good design?
+</br>
+With increasingly small budgets, philanthropic organizations and city governments across America have made good design a secondary priority. As a result organizations that provide fundamental services may not reach and inspire their audiences to seek their help, donate funds or absorb critical information.
+</br>
+Let&#39;s build a way for designers to give back and simultaneously build their portfolio, gather feedback on their work and see their designs in the city around them. -->
+<% end %>
+
+<%= content_for :slider do %>
+  <div class="cityslides">
+    <ul>
+      <li><img src="/images/boston.jpg"></img></li>
+      <li><img src="/images/philly.jpg"></img></li>
+      <li><img src="/images/seattle.jpg"></img></li>
+    </ul>
+</div> 
+    
+      
+<% end %>
+
+<%= content_for :column3 do %>  
+<% end %>

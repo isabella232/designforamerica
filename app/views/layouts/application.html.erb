@@ -24,7 +24,7 @@
 	<body>
  <div id="header">
 	<div id="headerimg">
-    	<%= link_to image_tag('redesign123.png'), :root%>
+    	<%= link_to image_tag('redesigngovorg.png'), :root%>
 <!--    	<div id="session"> 
     	  <%= render 'layouts/sign_in'%>
 		</div> -->
@@ -36,22 +36,22 @@
 	<div id="nav"> 
     	<!-- <a href="/" title="Home" rel="nofollow">Homepage</a> | -->
 		<ul>
-                    <li><a href="/aboutus" title="Users" rel="nofollow">ABOUT US</a></li>     	<!-- need to add route -->
+               
+	<% if !current_user%>
+		<li><a href="/aboutus" title="Users" rel="nofollow">ABOUT US</a></li>
 		<li><%= link_to "PROFILES", profiles_path %></li>
-		<% if !current_user%>
 		<li><%= link_to "JOIN", new_user_registration_path %></li>
 		<li><%= link_to "SIGN IN", new_user_session_path%></li>
-		</ul>
 	<% end %>
+	
 	<% if current_user%>
 		<!--  <a href="/projects?user_id=<%# =c%>">My Projects </a> | -->
-		<li><%= link_to "MY PROJECTS", projects_path(:user_id => current_user.id) %></li>
-		<li><%= link_to "MY PROFILE", current_user.profile %></li>
-		<li><%= link_to "EDIT MY PROFILE", edit_profile_path(current_user.profile) %></li>     	
-		<li><%= link_to "NEW PROJECT", new_project_path%></li>
-		</ul>
+		<li><a href="users/sign_out">SIGN OUT</a></li>
+		<li><a href="/aboutus" title="Users" rel="nofollow">ABOUT US</a></li>
+		<li><a href="/designs">PROJECTS</a></li>
+		<li><%= link_to "PROFILES", profiles_path %></li>
 	<% end %>
-		
+		</ul>
 	</div>
 </div>
 		

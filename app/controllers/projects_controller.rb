@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.xml
   def index
-    if params[:user_id]
+    if params[:user_id] 
       @projects = Project.where(:user_id => params[:user_id])
     else
       @projects = Project.published
