@@ -2444,7 +2444,7 @@ ul#presence_icons li {
 }
 #container {width:940px; height:300px;}
 .call_action
-         { width:250px; height:276px; margin:15px 0 0 20px; float:left; padding:10px; border:1px solid #ccc;}
+         { width:250px; height:276px; margin:15px 0 0 30px; float:left; padding:10px; border:1px solid #ccc;}
 .slider  { width:616px; height:296px; margin:14px 0 0 15px; border:1px solid #ccc; float:left;}
 .js {overflow:hidden;}
 #container .carousel,

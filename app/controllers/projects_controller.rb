@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
   def termsofservice
-    render :file=>"projects/termsofservice.html", :layout=>"popup.html.erb"
+    render "projects/termsofservice", :layout=>"popup"
   end
+
   # GET /projects
   # GET /projects.xml
   def index

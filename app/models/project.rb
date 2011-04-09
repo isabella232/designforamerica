@@ -1,8 +1,15 @@
 class Project < ActiveRecord::Base
   belongs_to :user
   has_many :designs  
+  after_initialize :init
   validates_presence_of :name,  :organization,  :cause,  :location,  :description,  :tos,  :size_require,  :format_require,  :target_audience,  :three_things,  :colors_want,  :colors_donotwant,  :how_use,  :content_on_design
   
+  
+
+    def init
+      self.published = true           # set published to true for sure
+    end
+
   
    if Rails.env.production?
   has_attached_file :creative1, :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml", :path => "/:style/:filename"  
