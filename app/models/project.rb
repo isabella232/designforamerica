@@ -1,13 +1,13 @@
 class Project < ActiveRecord::Base
   belongs_to :user
   has_many :designs  
-  after_initialize :init
+  before_create :init
   validates_presence_of :name,  :organization,  :cause,  :location,  :description,  :tos,  :size_require,  :format_require,  :target_audience,  :three_things,  :colors_want,  :colors_donotwant,  :how_use,  :content_on_design
   
   
 
     def init
-      self.published = true           # set published to true for sure
+      self.published = true         # set published to true for sure
     end
 
   
