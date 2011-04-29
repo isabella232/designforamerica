@@ -10,7 +10,29 @@
       </ul>
     </div>
   <% end %>
-
+<script language="javascript"> 
+function toggle(caller) {
+	var ele = document.getElementById("user_willing_to_meet_in_person");
+	var label = document.getElementById("foo");
+        var dcheck = document.getElementById("user_designer");
+	if(ele.style.display == "inline") {
+    		if(caller == "city_staff" && !dcheck.checked) {
+                    ele.style.display = "none";
+                    label.style.display = "none";
+                }
+                if(caller == "designer" && !dcheck.checked) {
+                    ele.style.display = "none";
+                    label.style.display = "none";
+                }
+        }
+        else {
+          if(caller == "designer") {
+                    ele.style.display = "inline";
+                    label.style.display = "inline";
+                }
+        }
+} 
+</script>
   <div class="field">
     <p><%= f.label :first_name %>: <%= f.text_field :first_name %></p>
   </div>
@@ -32,6 +54,21 @@
   <div class="field">
     <p><%= f.label :bio %>: <%= f.text_area :bio %></p>
   </div>
+   <!-- Checkbox for new user to indicate if they are city staff or if they are a designer -->
+  <p><%= f.label :city_staff %><br />
+  <input name="user[city_staff]" type="hidden" value="0" />
+  <input id="user_city_staff" name="user[city_staff]" type="checkbox" value="1" onclick="toggle('city_staff');" />
+  </p>
+
+  <p><%= f.label :designer %><br />
+  <input name="user[designer]" type="hidden" value="0" />
+  <input id="user_designer" name="user[designer]" type="checkbox" value="1" onclick="toggle('designer');" />
+  </p>
+  
+  <p><label id="foo" for="user_willing_to_meet_in_person" style="display: none">Willing to meet in person</label><br />
+  <input name="user[willing_to_meet_in_person]" type="hidden" value="0" />
+  <input id="user_willing_to_meet_in_person" name="user[willing_to_meet_in_person]" style="display: none" type="checkbox" value="1" /></p>
+    
   <div class="field">
     <p><%= f.label :agree, "I agree to the Terms of Service" %>: <%= f.check_box :agree %></p>
   </div>

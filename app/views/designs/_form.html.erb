@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.hidden_field :project_id, :value => params[:project_id] %></p>
+    <%= f.hidden_field :project_id, :value => @project.id %></p>
   </div>
   <div class="field">
     <% if @design.thumbnail?%>

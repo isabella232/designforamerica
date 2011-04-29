@@ -20,24 +20,6 @@
   <p><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></p>
 
-  <!-- Checkbox for new user to indicate if they are city staff or if they are a designer -->
-  <p><%= f.label :city_staff %><br />
-  <input name="user[city_staff]" type="hidden" value="0" />
-  <input id="user_city_staff" name="user[city_staff]" type="checkbox" value="1" onClick="document.getElementById('user_willing_to_meet_in_person').style.display='none';document.getElementById('foo').style.display='none';"/>
-  </p>
-
-  <p><%= f.label :designer %><br />
-  <input name="user[designer]" type="hidden" value="0" />
-  <input id="user_designer" name="user[designer]" type="checkbox" value="1" onclick="document.getElementById('user_willing_to_meet_in_person').style.display='inline';document.getElementById('foo').style.display='inline';" />
-  </p>
-  
-    <p><label id="foo" for="user_willing_to_meet_in_person">Willing to meet in person</label><br />
-  <input name="user[willing_to_meet_in_person]" type="hidden" value="0" />
-  <input id="user_willing_to_meet_in_person" name="user[willing_to_meet_in_person]" type="checkbox" value="1" /></p>
-    <script language="text/javascript">
-    document.getElementById('user_willing_to_meet_in_person').style.display='none';
-    </script>
-
   <p><%= f.submit "Sign up" %></p><br/>
 <% end %>
 <%= render :partial => "devise/shared/links" %>

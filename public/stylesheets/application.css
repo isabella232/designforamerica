@@ -191,6 +191,8 @@ a:hover
 	margin-top: 3.55em;
 }
 
+
+
 #tooltip {
     padding: 3px;
     background: #f9f9f9;
@@ -317,7 +319,6 @@ span.tip {
 .button
 {
 	padding: 4px;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#DDD));
 	border: 1px solid #999;	
 }
 
@@ -337,7 +338,6 @@ span.tip {
 	width: 5em;
 	font-size: 1.2em;
 	padding: 0px;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#DDD));;
 	border: 1px solid #999;	
 }
 
@@ -446,6 +446,34 @@ label {
 	padding-left:10em;
 	padding-right:10em;
 }
+#desnav {
+	font:18px/20px 'DejaVuSansCondensed'; 
+	color:#000000;
+        float:left;
+	padding-left:1em; 
+	min-height: .2em;
+
+	/* margin-top: 3em; */
+	border-bottom: 10px solid white;
+}
+
+#desnav li {
+	font:18px/20px 'DejaVuSansCondensed';
+	color:#000000;
+	text-decoration: underline;
+	display: inline;
+	min-height: .2em;
+	margin-left: 2em;
+	/* margin-top: 3em; */
+	/* border-bottom: 3px solid white; */
+}
+
+#designlist {
+	clear: left;
+	padding-left:5em; 
+	/* padding-right:10em; */
+}
+
 
 
 #wrapper {
@@ -1498,8 +1526,6 @@ div#search_suggest ul {
 	display: block;
 	max-width: 6em;
 	max-height: 3em;
-	height: expression(this.height >= this.width && this.height > 30 ? '3em' : true);
-	width: expression(this.height < this.width && this.width > 60 ? '6em' : true);
 	margin: auto;
 }
 
@@ -2179,7 +2205,6 @@ table.most_followed td.entity_link {
 
 .follow_button {
 	padding: 4px;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#DDD));
 	border: 1px solid #999;
 }
 
@@ -2407,7 +2432,7 @@ ul#presence_icons li {
 	top:-12px;
 	position:absolute; 
 	display:block; 
-	margin-top:1px;333
+	margin-top:1px;
 	border:1px solid #10394b;
 	cursor:move;
 	-moz-border-radius:14px;
@@ -2461,6 +2486,6 @@ ul#presence_icons li {
 #container .carousel .disabled:hover{-moz-opacity:.1;opacity:0.10;cursor:default;}
 #container .carousel div{margin:0;padding:0;border:0;}
 #container .carousel ul{padding:0;list-style:none;}
-#container .carousel ul li{position:relative;width:616;margin:0;}
+#container .carousel ul li{position:relative;width:616px;margin:0;}
 
 

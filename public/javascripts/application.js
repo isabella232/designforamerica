@@ -20,18 +20,18 @@ jQuery(function($)
     }
   }
 // This code had problems, so I had to edit it
-/*  var search_form = $('#search_form');
-  if ( search_form.length > 0 )
-  {
-    search_form
-      .searchform(search_form_options)
-      .find('#search_box').dropdown({
-        container_div: '#search_container',
-        dropdown_div: '#dropdown_search_results',
-        childSelector: 'div.search_result'
-        });
-  }
-*/
+// var search_form = $('#search_form');
+//  if ( search_form.length > 0 )
+//  {
+//    search_form
+//      .searchform(search_form_options)
+//      .find('#search_box').dropdown({
+//        container_div: '#search_container',
+//        dropdown_div: '#dropdown_search_results',
+//        childSelector: 'div.search_result'
+//        });
+//  }
+
   var quick_search_form = $('#quick_search_form');
   if ( quick_search_form.length > 0 )
     quick_search_form.searchform(search_form_options);
@@ -65,15 +65,15 @@ jQuery(function($)
     event.preventDefault();
   });
 
-  $('.range').rangeinput({
-    progress: true
-  })
-  .change(function()
-  {
-    $.post(this.form.action, $(this.form).serialize(), function(response, status, xhr)
-    {
+//  $('.range').rangeinput({
+//   progress: true
+//  })
+//  .change(function()
+//  {
+//    $.post(this.form.action, $(this.form).serialize(), function(response, status, xhr)
+//    {
       //possibly do something like notify them
-    });
-  }); */
+//    });
+//  });
 
 });

@@ -29,7 +29,8 @@ class DesignsController < ApplicationController
   # GET /designs/new.xml
   def new
     @design = Design.new
-
+    @project = current_user.projects.find(params[:project_id])
+     
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @design }
@@ -45,13 +46,13 @@ class DesignsController < ApplicationController
   # POST /designs.xml
   def create
     @design = current_user.designs.new(params[:design])
-
+    
     respond_to do |format|
       if @design.save
         format.html { redirect_to(@design, :notice => 'Design was successfully created.') }
         format.xml  { render :xml => @design, :status => :created, :location => @design }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => "new", :project_id => @design.project_id }
         format.xml  { render :xml => @design.errors, :status => :unprocessable_entity }
       end
     end

@@ -8,10 +8,11 @@ class Design < ActiveRecord::Base
   validates_presence_of :tos, :on => :create, :message => "can't be false"    
   
   if Rails.env.production?
-   has_attached_file :thumbnail, :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml", :path => "/:style/:filename"  
+   has_attached_file :thumbnail, :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml", :path => "/:style/:filename"
     has_attached_file :zip_package, :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml", :path => "/:style/:filename"
   else
     has_attached_file :thumbnail
     has_attached_file :zip_package
   end
+   
 end

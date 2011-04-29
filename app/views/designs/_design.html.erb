@@ -1,1 +1,2 @@
-<li><%=image_tag design.thumbnail.url%></li>
+
+  <%= link_to(image_tag(design.thumbnail.url, :size => "100x100"), design.thumbnail.url, { :class => "thickbox", :title => "Design", :rel => "dset"}) %>

@@ -1,4 +1,4 @@
-<% content_for :slider do%>
+<% content_for :leftbox do%>
     <h1 class="h1_first">project</h1>
 
             <p>
@@ -6,7 +6,6 @@
         <%= @project.name %>
       </p>
       <%  if @project.published?%>
-      <a href="/projects/<%=@project.id%>/designs/new">Submit a Design</a>
       <% end %>
       
       <%  if !@project.published?%>
@@ -82,13 +81,9 @@
           <li><%=link_to @project.creative3.original_filename, @project.creative3.url %></li>
         <%end%>
         </ul>
-        <%= render :partial => "designs/design", :collection => @project.designs%>
-      </p>
-      
-<% end %>
-<% content_for :column3 do%>  
+      </p> 
 <h3>Actions</h3> 
-	<div class="col3_content contribute"> 
+	<div class="col3_content contribute">
     <%= link_to 'New Project', new_project_path %><br>
     <% if current_user == @project.user%>
     <%= link_to 'Edit', edit_project_path(@project) %><br>
@@ -97,6 +92,20 @@
 	</div>
   
 <% end %>
-
-
-
+<% content_for :slider do%> 
+    <div id="desnav">
+	<ul>
+	    <li><%= link_to 'All Designs', new_project_path %></li>
+	    <li><%= link_to 'Top 3', new_project_path %></li>
+	    <li><%= link_to 'Vote', new_project_path %></li>
+	    <li><%= link_to 'PDF Extract', new_project_path %></li>
+	    
+	</ul>
+    </div>
+    <div id="designlist">
+	<ol class="designgroup">
+	    <%= render :partial => "designs/design", :collection => @project.designs%>
+	</ol>
+    </div>
+    <%= link_to 'Add a Design To This Project?', new_design_path(:project_id => @project.id) %><br>
+<% end %>
