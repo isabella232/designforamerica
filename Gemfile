@@ -14,6 +14,7 @@ gem 'google-search'
 gem 'will_paginate', "~> 3.0.pre2"
 gem "paperclip", "~> 2.3"
 gem 'aws-s3', :require => 'aws/s3'
+gem 'thumbs_up'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

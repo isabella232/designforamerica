@@ -1,6 +1,10 @@
 Secretsauce::Application.routes.draw do
 
-  resources :designs
+  resources :designs do
+    member do
+      post :vote_up
+    end
+  end
   
   match "projects/termsofservice", :to=>"projects#termsofservice"
   

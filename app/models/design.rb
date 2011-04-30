@@ -1,6 +1,7 @@
 class Design < ActiveRecord::Base
   belongs_to :user
   belongs_to :project
+  acts_as_voteable
   
   validates_presence_of :description, :on => :create, :message => "can't be blank"
   validates_presence_of :user, :on => :create, :message => "can't be blank"  
