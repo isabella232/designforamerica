@@ -46,11 +46,12 @@ class DesignsController < ApplicationController
   # POST /designs.xml
   def create
     @design = current_user.designs.new(params[:design])
-    
+    @project = @design.project
+   
     respond_to do |format|
       if @design.save
-        format.html { redirect_to(@design, :notice => 'Design was successfully created.') }
-        format.xml  { render :xml => @design, :status => :created, :location => @design }
+        format.html { redirect_to(@design.project, :notice => 'Design was successfully created.', :project_id => @design.project_id ) }
+        format.xml  { render :xml => @design.project, :status => :created, :location => @design }
       else
         format.html { render :action => "new", :project_id => @design.project_id }
         format.xml  { render :xml => @design.errors, :status => :unprocessable_entity }
