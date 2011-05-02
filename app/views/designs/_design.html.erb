@@ -1,4 +1,5 @@
 
   <%= link_to(image_tag(design.thumbnail.url, :size => "100x100"), design.thumbnail.url, { :class => "thickbox", :title => "Design", :rel => "dset"}) %>
-  <%= link_to('vote for this design!', vote_up_design_path(@design), :method => :design) %>
+  <table cellpadding="0" cellspacing="0"><tr><td class="rating_title">User Rating: <%= design.votes_for %> </td>
+  <%= link_to('+1', vote_up_design_path(design), :method => :post) %>
 

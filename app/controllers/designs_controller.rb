@@ -76,10 +76,15 @@ class DesignsController < ApplicationController
   
   def vote_up
     begin
-      current_user.vote_for(@design = Design.find(params[:id]))
-      render :nothing => true, :status => 200
-    rescue ActiveRecord::RecordInvalid
-      render :nothing => true, :status => 404
+      @design = current_user.designs.find(params[:id])
+      if !current_user.voted_for?(@design)
+        current_user.vote_for(@design)
+        redirect_to @design.project, :notice => 'Vote was entered.'  
+      else
+        redirect_to @design.project, :notice => 'You have already voted.' 
+      end
+    #rescue ActiveRecord::RecordInvalid
+    #  render :nothing => true, :status => 404
     end
   end
 
