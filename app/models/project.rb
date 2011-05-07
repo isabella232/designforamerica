@@ -12,9 +12,9 @@ class Project < ActiveRecord::Base
 
   
    if Rails.env.production?
-  has_attached_file :creative1, :storage => :s3, :s3_credentials => { :access_key_id => ENV['S3_KEY'], :secret_access_key => ENV['S3_SECRET']}, :path => "/:style/:filename"  
-  has_attached_file :creative2, :storage => :s3, :s3_credentials => { :access_key_id => ENV['S3_KEY'], :secret_access_key => ENV['S3_SECRET']}, :path => "/:style/:filename"  
-  has_attached_file :creative3, :storage => :s3, :s3_credentials => { :access_key_id => ENV['S3_KEY'], :secret_access_key => ENV['S3_SECRET']}, :path => "/:style/:filename"
+  has_attached_file :creative1, :storage => :s3, :s3_credentials => { :access_key_id => ENV['S3_KEY'], :secret_access_key => ENV['S3_SECRET'], :bucket => "projects"}, :path => "/:style/:filename"  
+  has_attached_file :creative2, :storage => :s3, :s3_credentials => { :access_key_id => ENV['S3_KEY'], :secret_access_key => ENV['S3_SECRET'], :bucket => "projects"}, :path => "/:style/:filename"  
+  has_attached_file :creative3, :storage => :s3, :s3_credentials => { :access_key_id => ENV['S3_KEY'], :secret_access_key => ENV['S3_SECRET'], :bucket => "projects"}, :path => "/:style/:filename"
   else
     has_attached_file :creative1
     has_attached_file :creative2
