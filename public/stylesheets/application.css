@@ -31,7 +31,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 table 
 {
 	border-collapse: collapse;
-	border-spacing: 0;
+	border-spacing: 5px;
 }
 
 img 
@@ -159,6 +159,16 @@ strong
 table,tr,td
 {
 	font-size: 1em;
+	border: white;
+  padding: 10px;
+  border-left: 1px solid #F4F4F2;
+  border-right: 1px solid #F4F4F2;
+  border-bottom: 1px solid #F4F4F2;
+  border-top: 2px solid grey;
+  background: #fff;
+  padding: 6px 6px 6px 15px;
+  color: #9C9C9C;
+  	
 }
 
 td
@@ -173,7 +183,7 @@ a
 
 a:hover
 {
-	color: #165d91;
+	color: #9C9C9C;
 }
 
 
@@ -411,6 +421,7 @@ label {
 	float: right; 
 }
 
+
 #strip_right
 {
 	float: right;
@@ -530,7 +541,7 @@ div.funding_round_checkbox, div.category_checkbox
 
 #col1 h1, #col1 h2
 {
-	background: #e5ebec;
+	background: #blac;
 	padding: .5em 1.8em .5em 1.8em;
 	font-weight: bold;
 	font-size: 1.1em;
@@ -2326,7 +2337,7 @@ ul#presence_icons li {
 	background-color:#409DD6;
 	font-weight:bold;
 }
-#login_container div{margin:0.5em;float:left;font-size:15px;}
+#login_container div{margin:10em;float:left;font-size:20px;}
 
 #welcome{
     background-color:#409DD6;
