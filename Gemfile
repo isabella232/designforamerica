@@ -13,7 +13,6 @@ gem 'acts-as-taggable-on'
 gem 'google-search'
 gem 'will_paginate', "~> 3.0.pre2"
 gem "paperclip", "~> 2.3"
-gem 'aws-s3', :require => 'aws/s3'
 gem 'thumbs_up'
 
 # Bundle edge Rails instead:
@@ -46,3 +45,6 @@ group :development, :test do
   gem 'ZenTest'
 end
 
+group :production do
+  gem 'aws-s3', :require => 'aws/s3'
+end
